@@ -6,7 +6,7 @@ export default function AboutComponent() {
   return (
     <section className="max-w-6xl mx-auto px-6 py-16">
       <img src={heroImg} className="w-full h-72 object-cover rounded-xl mb-6" alt="Cafe" />
-      <h1 className="text-3xl font-semibold mb-4">About Cup OF Cafee</h1>
+      <h1 className="text-3xl font-semibold mb-4">About Cup OF Caffeine</h1>
       <p className="text-gray-600 mb-4">
         Cup OF Cafee is a small neighbourhood cafe serving fresh tea & coffee.
         We focus on simple flavors, affordable prices and a friendly space.

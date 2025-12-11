@@ -9,7 +9,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/20 to-black/40" />
         <div className="relative z-10 max-container h-full flex items-center">
           <div className="text-white max-w-xl">
-            <p className="uppercase text-sm tracking-wider text-[color:var(--accent)] mb-2">Cup OF Cafee</p>
+            <p className="uppercase text-sm tracking-wider text-[color:var(--accent)] mb-2">Cup OF Caffene</p>
             <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-4">Taste • Relax • Enjoy</h1>
             <p className="text-sm md:text-base text-white/90 mb-6">Fresh tea & coffee, tasty snacks and a warm place to relax — Mate Chauk, Nagpur.</p>
 

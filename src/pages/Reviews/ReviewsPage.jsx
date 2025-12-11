@@ -1,9 +1,11 @@
 import React from "react";
+import ReviewsSummary from "../../components/ReviewsSummary";
 
 export default function ReviewsPage() {
   return (
     <section className="max-w-6xl mx-auto px-6 py-20">
       <h1 className="text-2xl font-semibold mb-4">Customer Reviews</h1>
+      <ReviewsSummary/>
 
       <div className="grid gap-4">
         <div className="card p-4">

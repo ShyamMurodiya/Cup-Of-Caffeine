@@ -49,10 +49,10 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-10 h-10 rounded-full flex items-center justify-center bg-[color:var(--accent)] shadow transition-transform duration-500 group-hover:scale-110">
-              <span className="text-black font-bold">Cf</span>
+              <span className="text-black font-bold">COC</span>
             </div>
             <div>
-              <div className="text-base font-semibold text-[color:var(--ink)] dark:text-white">Cup OF Cofee</div>
+              <div className="text-base font-semibold text-[color:var(--ink)] dark:text-white">Cup Of Caffeine</div>
               <div className="text-xs text-[color:var(--muted)]">Taste · Relax · Enjoy</div>
             </div>
           </Link>
