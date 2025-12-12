@@ -14,7 +14,7 @@ export default function Hero() {
             <p className="text-sm md:text-base text-white/90 mb-6">Fresh tea & coffee, tasty snacks and a warm place to relax — Mate Chauk, Nagpur.</p>
 
             <div className="flex gap-3">
-              <a href={`https://wa.me/918308670846`} target="_blank" rel="noreferrer" className="btn bg-[color:var(--accent)] text-black">Order on WhatsApp</a>
+              <a href={`https://wa.me/918308670846`} target="_blank" rel="noreferrer" className="btn bg-[color:var(--accent)] text-black">Order on WhatsAppp </a>
               <Link to="/menu" className="btn border border-white/30 text-white">See Menu</Link>
             </div>
           </div>
