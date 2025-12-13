@@ -1,29 +1,67 @@
 // src/components/MenuItem.jsx
 import React from "react";
 
-export default function MenuItem({ item }) {
-  const waText = encodeURIComponent(`Hi, I'd like to order: ${item.name} (₹${item.price})`);
+const FALLBACK_IMG =
+  "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=60";
+
+export default function MenuItem({ item, compact = false }) {
+  const waText = encodeURIComponent(
+    `Hi, I'd like to order: ${item.name} (₹${item.price})`
+  );
   const waLink = `https://wa.me/918308670846?text=${waText}`;
 
   return (
-    <article className="bg-white rounded-2xl shadow-sm p-4 flex flex-col gap-3">
-      <div className="h-40 md:h-48 w-full rounded-xl overflow-hidden bg-gray-100">
-        {item.img ? (
-          <img src={item.img} alt={item.name} className="w-full h-full object-cover" loading="lazy" />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center text-gray-400">No image</div>
+    <article
+      className={`
+        rounded-2xl p-4 flex flex-col gap-3
+        bg-white text-black
+        dark:bg-neutral-900 dark:text-white
+        border border-black/5 dark:border-white/10
+        shadow-sm
+        ${compact ? "text-center" : ""}
+      `}
+    >
+      {/* Image */}
+      <div
+        className={`
+          w-full rounded-xl overflow-hidden
+          ${compact ? "h-32" : "h-40 md:h-48"}
+          bg-gray-100 dark:bg-neutral-800
+        `}
+      >
+        <img
+          src={item.image || FALLBACK_IMG}
+          alt={item.name}
+          loading="lazy"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Info */}
+      <div className="flex-1">
+        <h3 className="text-base md:text-lg font-semibold">
+          {item.name}
+        </h3>
+
+        {!compact && (
+          <p className="text-sm mt-1 text-gray-600 dark:text-gray-400">
+            {item.description || "Fresh • Tasty"}
+          </p>
         )}
       </div>
 
-      <div className="flex-1">
-        <h3 className="text-lg font-semibold">{item.name}</h3>
-        <p className="text-sm text-gray-600 mt-1">{item.description}</p>
-      </div>
-
+      {/* Price + Actions */}
       <div className="flex items-center justify-between gap-3">
         <div>
-          <span className="text-lg font-bold">₹{item.price}</span>
-          <span className="text-sm text-gray-500 ml-2"> · {item.category}</span>
+          <span className="text-lg font-bold">
+            ₹{item.price}
+          </span>
+
+          {!compact && (
+            <span className="text-sm ml-2 text-gray-500 dark:text-gray-400">
+              · {item.category}
+            </span>
+          )}
         </div>
 
         <div className="flex gap-2">
@@ -31,18 +69,28 @@ export default function MenuItem({ item }) {
             href={waLink}
             target="_blank"
             rel="noreferrer"
-            className="btn bg-[color:var(--accent)] text-black px-3 py-2 rounded-md text-sm"
-            aria-label={`Order ${item.name} on WhatsApp`}
+            className="
+              px-3 py-2 rounded-md text-sm font-medium
+              bg-[color:var(--accent)] text-black
+              hover:opacity-90 transition
+            "
           >
             Order
           </a>
-          <button
-            className="btn border border-gray-200 px-3 py-2 rounded-md text-sm"
-            onClick={() => alert(`${item.name} added to cart (demo)`) }
-            aria-label={`Add ${item.name} to cart`}
-          >
-            Add
-          </button>
+
+          {!compact && (
+            <button
+              className="
+                px-3 py-2 rounded-md text-sm
+                border border-gray-200 dark:border-white/20
+                hover:bg-gray-50 dark:hover:bg-white/10
+                transition
+              "
+              onClick={() => alert(`${item.name} added to cart (demo)`)}
+            >
+              Add
+            </button>
+          )}
         </div>
       </div>
     </article>

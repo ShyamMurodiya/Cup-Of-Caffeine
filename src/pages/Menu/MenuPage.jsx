@@ -8,8 +8,7 @@ export default function PrebookPage() {
   return (
       <>
         <Menu />
-        <About />
-        <PrebookForm />
+
       </>
     );
 }

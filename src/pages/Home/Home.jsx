@@ -1,16 +1,25 @@
-import React from "react";
+import GalleryPreview from "../../components/GalleryPreview";
 import Hero from "../../components/Hero";
-import Menu from "../../components/Menu";
-import About from "../../components/About";
-import PrebookForm from "../../components/PrebookForm";
+import PopularPicks from "../../components/PopularPicks";
+import WhyUs from "../../components/WhyUs";
+import useMenu from "../../hooks/useMenu";
+
+
+const POPULAR_IDS = [1, 4, 6, 7];
 
 export default function Home() {
+  const items = useMenu();
+
+  const popularItems = items.filter((item) =>
+    POPULAR_IDS.includes(Number(item.id))
+  );
+
   return (
     <>
       <Hero />
-      <Menu />
-      <About />
-      <PrebookForm />
+      <PopularPicks items={popularItems} />
+      <WhyUs />
+      <GalleryPreview/>
     </>
   );
 }
