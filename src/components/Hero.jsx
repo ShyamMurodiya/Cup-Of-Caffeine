@@ -9,13 +9,13 @@ export default function Hero() {
     <section className="relative overflow-hidden">
       <div
         style={{ backgroundImage: `url(${img})` }}
-        className="h-[60vh] md:h-[70vh] bg-center bg-cover relative"
+        className="h-[85vh] md:h-[90vh] bg-center bg-cover relative"
       >
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/40" />
 
         {/* Content */}
-        <div className="relative z-10 max-container h-full flex items-center">
+        <div className="relative z-10 max-container h-full flex items-center pt-20">
           <div className="text-white max-w-xl">
             <p className="uppercase text-sm tracking-wider text-[color:var(--accent)] mb-2">
               Cup Of Caffeine
@@ -50,9 +50,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
-      {/* 🔥 IMPORTANT: clean cut after hero */}
-      <div className="h-16 bg-white dark:bg-black" />
     </section>
   );
 }

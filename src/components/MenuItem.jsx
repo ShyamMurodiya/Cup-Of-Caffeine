@@ -14,9 +14,8 @@ export default function MenuItem({ item, compact = false }) {
     <article
       className={`
         rounded-2xl p-4 flex flex-col gap-3
-        bg-white text-black
-        dark:bg-neutral-900 dark:text-white
-        border border-black/5 dark:border-white/10
+        bg-white text-[color:var(--ink)]
+        border border-black/5
         shadow-sm
         ${compact ? "text-center" : ""}
       `}
@@ -26,7 +25,7 @@ export default function MenuItem({ item, compact = false }) {
         className={`
           w-full rounded-xl overflow-hidden
           ${compact ? "h-32" : "h-40 md:h-48"}
-          bg-gray-100 dark:bg-neutral-800
+          bg-gray-100
         `}
       >
         <img
@@ -44,7 +43,7 @@ export default function MenuItem({ item, compact = false }) {
         </h3>
 
         {!compact && (
-          <p className="text-sm mt-1 text-gray-600 dark:text-gray-400">
+          <p className="text-sm mt-1 text-[color:var(--muted)]">
             {item.description || "Fresh • Tasty"}
           </p>
         )}
@@ -58,7 +57,7 @@ export default function MenuItem({ item, compact = false }) {
           </span>
 
           {!compact && (
-            <span className="text-sm ml-2 text-gray-500 dark:text-gray-400">
+            <span className="text-sm ml-2 text-[color:var(--muted)]">
               · {item.category}
             </span>
           )}
@@ -82,8 +81,8 @@ export default function MenuItem({ item, compact = false }) {
             <button
               className="
                 px-3 py-2 rounded-md text-sm
-                border border-gray-200 dark:border-white/20
-                hover:bg-gray-50 dark:hover:bg-white/10
+                border border-gray-200
+                hover:bg-gray-50
                 transition
               "
               onClick={() => alert(`${item.name} added to cart (demo)`)}

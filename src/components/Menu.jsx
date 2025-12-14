@@ -38,9 +38,13 @@ export default function Menu() {
     });
 
     if (sortBy === "price-asc") {
-      arr = [...arr].sort((a, b) => (Number(a.price) || 0) - (Number(b.price) || 0));
+      arr = [...arr].sort(
+        (a, b) => (Number(a.price) || 0) - (Number(b.price) || 0)
+      );
     } else if (sortBy === "price-desc") {
-      arr = [...arr].sort((a, b) => (Number(b.price) || 0) - (Number(a.price) || 0));
+      arr = [...arr].sort(
+        (a, b) => (Number(b.price) || 0) - (Number(a.price) || 0)
+      );
     } else if (sortBy === "name") {
       arr = [...arr].sort((a, b) => a.name.localeCompare(b.name));
     }
@@ -60,9 +64,9 @@ export default function Menu() {
   }, [filteredItems]);
 
   const orderWhatsApp = (item) => {
-    const msg = `Hi, I'd like to order: ${item.name} (${formatPrice(
+    const msg = `Hi, I'd like to order (pickup from café): ${item.name} (${formatPrice(
       item.price
-    )}) from Cup OF Caffee.`;
+    )}) from Cup Of Caffeine.`;
     window.open(
       `https://wa.me/${SHOP_NUMBER}?text=${encodeURIComponent(msg)}`,
       "_blank"
@@ -70,14 +74,21 @@ export default function Menu() {
   };
 
   return (
-    <section id="menu" className="bg-[color:var(--bg)]">
+    <section id="menu" className="bg-[color:var(--page-bg)]">
       <div className="max-w-6xl mx-auto px-6 py-12">
         {/* Header */}
         <div className="text-center mb-6">
-          <h2 className="text-2xl md:text-3xl font-semibold">Our Menu</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold text-[color:var(--ink)]">
+            Our Menu
+          </h2>
           <p className="text-sm text-[color:var(--muted)] mt-1">
             Fresh & affordable — updated daily
           </p>
+
+          {/* Pickup Notice */}
+          <div className="mt-3 inline-block rounded-md bg-yellow-50 border border-yellow-200 px-3 py-2 text-xs text-yellow-800">
+            📍 Orders are prepared for café pickup only · No home delivery
+          </div>
         </div>
 
         {/* Controls */}
@@ -116,7 +127,7 @@ export default function Menu() {
         {/* Empty state */}
         {Object.keys(grouped).length === 0 && (
           <div className="p-8 bg-[color:var(--card)] rounded-lg text-center">
-            <p className="text-gray-600">No items found.</p>
+            <p className="text-[color:var(--muted)]">No items found.</p>
           </div>
         )}
 
@@ -125,7 +136,9 @@ export default function Menu() {
           {Object.keys(grouped).map((category) => (
             <div key={category} className="p-5 bg-[color:var(--card)] rounded-xl">
               <div className="flex justify-between mb-4">
-                <h3 className="text-lg font-semibold">{category}</h3>
+                <h3 className="text-lg font-semibold text-[color:var(--ink)]">
+                  {category}
+                </h3>
                 <span className="text-xs text-[color:var(--muted)]">
                   {grouped[category].length} items
                 </span>
@@ -138,7 +151,9 @@ export default function Menu() {
                     className="py-3 flex items-center justify-between"
                   >
                     <div>
-                      <p className="text-sm font-medium">{item.name}</p>
+                      <p className="text-sm font-medium text-[color:var(--ink)]">
+                        {item.name}
+                      </p>
                       <p className="text-xs text-[color:var(--muted)]">
                         Fresh • Hot
                       </p>
@@ -152,7 +167,7 @@ export default function Menu() {
                         onClick={() => orderWhatsApp(item)}
                         className="mt-2 text-xs px-3 py-1 rounded-full bg-[color:var(--accent)] text-black"
                       >
-                        Order
+                        Order (Pickup)
                       </button>
                     </div>
                   </div>
@@ -172,6 +187,9 @@ export default function Menu() {
           >
             Order on WhatsApp
           </a>
+          <p className="mt-2 text-xs text-[color:var(--muted)]">
+            Pickup from café only · No home delivery
+          </p>
         </div>
       </div>
     </section>

@@ -1,11 +1,9 @@
 @import "tailwindcss";
 
-
-/* Theme — kept only the vars we use in components */
-/* Light + Dark Theme Variables */
+/* 🌞 LIGHT MODE ONLY — Cafe Theme Variables */
 :root {
   color-scheme: light;
-  --page-bg: #fbfbfd;
+  --page-bg: #ececd37d;
   --card: #ffffff;
   --muted: #6b7280;
   --accent: #ffd166;
@@ -15,20 +13,13 @@
   --radius: 14px;
 }
 
-.dark {
-  color-scheme: dark;
-  --page-bg: #0d1117; /* ✅ SOLID background */
-  --card: #161b22;
-  --muted: #9ca3af;
-  --accent: #f4c15d;
-  --accent-dark: #d4a643;
-  --ink: #f5f7fa;
-  --soft: #22272e;
+/* Base */
+html, body, #root {
+  height: 100%;
 }
 
-/* Base */
-html, body, #root { height: 100%; }
-html,body {
+html,
+body {
   font-family: 'Inter', system-ui, -apple-system, 'Poppins', sans-serif;
   background: var(--page-bg);
   color: var(--ink);
@@ -41,7 +32,7 @@ html,body {
 /* Reusable components */
 .card {
   background: var(--card);
-  box-shadow: 0 10px 30px rgba(16,24,40,0.08);
+  box-shadow: 0 10px 30px rgba(16, 24, 40, 0.08);
   border-radius: var(--radius);
 }
 
@@ -52,29 +43,46 @@ html,body {
 }
 
 /* tiny floating animation used on logo */
-@keyframes float { 0% { transform: translateY(0) } 50% { transform: translateY(-6px) } 100% { transform: translateY(0) } }
-.animate-float { animation: float 5s ease-in-out infinite; }
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
 
 /* subtle focus ring for keyboard users */
 :focus {
-  outline: 3px solid rgba(246,200,76,0.18);
+  outline: 3px solid rgba(246, 200, 76, 0.18);
   outline-offset: 3px;
 }
 
 /* container helper used in Navbar/Hero */
-.max-container { max-width: 1200px; margin-left:auto; margin-right:auto; padding-left:1rem; padding-right:1rem; }
+.max-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 
-/* navbar helpers (clean underline behavior) */
-header a { text-decoration: none; }
-/* ensure underline transform origin is left for scale animation */
-header nav a > span + span { transform-origin: left; }
+/* navbar helpers */
+header a {
+  text-decoration: none;
+}
+header nav a > span + span {
+  transform-origin: left;
+}
 
 /* mobile panel smoothing */
 @media (prefers-reduced-motion: no-preference) {
-  .transform-gpu { transform: translateZ(0); }
+  .transform-gpu {
+    transform: translateZ(0);
+  }
 }
 
-
+/* pulse animation (used for highlights if needed) */
 @keyframes pulse {
   0% { box-shadow: 0 0 0 0 rgba(34,197,94,.7); }
   70% { box-shadow: 0 0 0 15px rgba(34,197,94,0); }

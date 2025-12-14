@@ -4,7 +4,7 @@ export default function Features() {
   const features = [
     {
       title: "Freshly Brewed Tea",
-      desc: "Authentic taste served hot everyday.",
+      desc: "Authentic taste served hot every day.",
       icon: "☕",
     },
     {
@@ -25,15 +25,15 @@ export default function Features() {
   ];
 
   return (
-    <section id="features" className="w-full py-14 bg-gray-50">
+    <section id="features" className="w-full py-14 bg-[color:var(--soft)]">
       <div className="max-w-6xl mx-auto px-6">
-        
+
         {/* Section Title */}
         <div className="text-center mb-10">
-          <h2 className="text-2xl md:text-3xl font-semibold text-gray-800">
+          <h2 className="text-2xl md:text-3xl font-semibold text-[color:var(--ink)]">
             Why Choose Us?
           </h2>
-          <p className="text-gray-500 text-sm md:text-base mt-1">
+          <p className="text-[color:var(--muted)] text-sm md:text-base mt-1">
             We serve quality & create comfort for everyone.
           </p>
         </div>
@@ -46,10 +46,10 @@ export default function Features() {
               className="bg-white p-6 rounded-xl shadow hover:shadow-md transition transform hover:-translate-y-1"
             >
               <div className="text-4xl mb-3">{item.icon}</div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-1">
+              <h3 className="text-lg font-semibold text-[color:var(--ink)] mb-1">
                 {item.title}
               </h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
+              <p className="text-sm text-[color:var(--muted)] leading-relaxed">
                 {item.desc}
               </p>
             </div>

@@ -11,9 +11,10 @@ export default function GalleryPreview() {
   return (
     <section className="bg-[color:var(--bg)] py-12">
       <div className="max-w-6xl mx-auto px-6">
+
         {/* Heading */}
         <div className="text-center mb-8">
-          <h2 className="text-2xl md:text-3xl font-semibold">
+          <h2 className="text-2xl md:text-3xl font-semibold text-[color:var(--ink)]">
             Café Moments
           </h2>
           <p className="text-sm text-[color:var(--muted)] mt-1">
@@ -31,7 +32,7 @@ export default function GalleryPreview() {
               <img
                 src={src}
                 alt="Cafe gallery"
-                className="w-full h-56 object-cover hover:scale-105 transition"
+                className="w-full h-56 object-cover transition-transform duration-300 hover:scale-105"
                 loading="lazy"
               />
             </div>
@@ -42,11 +43,12 @@ export default function GalleryPreview() {
         <div className="text-center mt-8">
           <Link
             to="/gallery"
-            className="inline-block px-6 py-3 rounded-lg border border-gray-300 text-sm font-medium hover:bg-gray-50 transition"
+            className="inline-block px-6 py-3 rounded-lg border border-gray-300 text-sm font-medium text-[color:var(--ink)] hover:bg-gray-50 transition"
           >
             View Full Gallery →
           </Link>
         </div>
+
       </div>
     </section>
   );
