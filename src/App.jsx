@@ -11,6 +11,7 @@ import ReviewsPage from "./pages/Reviews/ReviewsPage";
 import ContactPage from "./pages/Contact/ContactPage";
 import PrebookPage from "./pages/Prebook/PrebookPage";
 import WhatsAppFloat from "./components/WhatsAppFloat";
+import Footer from "./components/Footer";
 
 // Load saved theme before rendering anything
 const savedTheme = localStorage.getItem("theme");
@@ -35,6 +36,7 @@ export default function App() {
         </Routes>
       </main>
       <WhatsAppFloat/>
+      <Footer/>
     </div>
   );
 }
