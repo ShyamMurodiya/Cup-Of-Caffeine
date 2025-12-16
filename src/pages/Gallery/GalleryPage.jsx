@@ -1,13 +1,28 @@
 import React, { useState } from "react";
 
+// ✅ Import images with CORRECT extensions
+import img1 from "../../assets/cafeimg/cocimg1.jpg";
+import img2 from "../../assets/cafeimg/cocimg2.jpg";
+import img3 from "../../assets/cafeimg/cocimg3.jpg";
+import img5 from "../../assets/cafeimg/cocimg5.jpg";
+import img6 from "../../assets/cafeimg/cocimg6.jpeg";
+import img7 from "../../assets/cafeimg/cocimg7.jpeg";
+import img8 from "../../assets/cafeimg/cocimg8.jpeg";
+import img9 from "../../assets/cafeimg/cocimg9.jpeg";
+import img10 from "../../assets/cafeimg/cocimg10.jpg";
+
 export default function GalleryPage() {
+  // ✅ REAL image imports (NOT strings)
   const images = [
-    "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200&q=80",
-    "https://images.unsplash.com/photo-1498804103079-a6351b050096?w=1200&q=80",
-    "https://images.unsplash.com/photo-1498654896293-37aacf113fd9?w=1200&q=80",
-    "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=1200&q=80",
-    "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=1200&q=80",
-    "https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=1200&q=80",
+    img1,
+    img2,
+    img3,
+    img5,
+    img6,
+    img7,
+    img8,
+    img9,
+    img10,
   ];
 
   const [activeImg, setActiveImg] = useState(null);
@@ -29,19 +44,30 @@ export default function GalleryPage() {
         {images.map((src, i) => (
           <div
             key={i}
-            className="relative group overflow-hidden rounded-2xl shadow-sm cursor-pointer"
             onClick={() => setActiveImg(src)}
+            className="relative group overflow-hidden rounded-2xl shadow-sm cursor-pointer"
           >
             <img
               src={src}
               alt={`gallery-${i}`}
               loading="lazy"
-              className="w-full h-72 md:h-80 object-cover transition-transform duration-300 group-hover:scale-110"
+              className="
+                w-full h-72 md:h-80 object-cover
+                transition-transform duration-300
+                group-hover:scale-110
+              "
             />
 
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition flex items-center justify-center">
-              <span className="text-white text-sm opacity-0 group-hover:opacity-100 transition">
+            {/* Hover overlay */}
+            <div className="
+              absolute inset-0 bg-black/0
+              group-hover:bg-black/30
+              transition flex items-center justify-center
+            ">
+              <span className="
+                text-white text-sm font-medium
+                opacity-0 group-hover:opacity-100 transition
+              ">
                 View
               </span>
             </div>
@@ -52,7 +78,10 @@ export default function GalleryPage() {
       {/* Lightbox */}
       {activeImg && (
         <div
-          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center px-4"
+          className="
+            fixed inset-0 z-50 bg-black/80
+            flex items-center justify-center px-4
+          "
           onClick={() => setActiveImg(null)}
         >
           <img

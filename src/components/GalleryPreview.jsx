@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// ✅ CORRECT PATHS
+import img1 from "../assets/cafeimg/cocimg7.jpeg";
+import img2 from "../assets/cafeimg/cocimg1.jpg";
+import img3 from "../assets/cafeimg/cocimg9.jpeg";
+
 export default function GalleryPreview() {
-  const images = [
-    "https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=600",
-    "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=600",
-    "https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=600",
-  ];
+  const images = [img1, img2, img3];
 
   return (
     <section className="bg-[color:var(--bg)] py-12">
@@ -15,7 +16,7 @@ export default function GalleryPreview() {
         {/* Heading */}
         <div className="text-center mb-8">
           <h2 className="text-2xl md:text-3xl font-semibold text-[color:var(--ink)]">
-            Café Moments
+            Café Moments ☕
           </h2>
           <p className="text-sm text-[color:var(--muted)] mt-1">
             A glimpse of our place & coffee
@@ -31,7 +32,7 @@ export default function GalleryPreview() {
             >
               <img
                 src={src}
-                alt="Cafe gallery"
+                alt={`Cafe ${index}`}
                 className="w-full h-56 object-cover transition-transform duration-300 hover:scale-105"
                 loading="lazy"
               />

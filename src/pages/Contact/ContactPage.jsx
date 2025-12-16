@@ -1,4 +1,5 @@
 import React from "react";
+import PrebookForm from "../../components/PrebookForm";
 
 export default function VisitUsPage() {
   return (
@@ -21,7 +22,7 @@ export default function VisitUsPage() {
         {/* LEFT COLUMN */}
         <div className="space-y-6">
           
-          {/* OPENING HOURS (TOP PRIORITY) */}
+          {/* OPENING HOURS */}
           <div className="card p-6">
             <h3 className="text-lg font-semibold mb-2">🕒 Opening Hours</h3>
             <p className="text-sm text-[color:var(--muted)]">
@@ -76,8 +77,8 @@ export default function VisitUsPage() {
         </div>
       </div>
 
-      {/* BOTTOM CTA */}
-      <div className="pb-24 text-center">
+      {/* WHATSAPP CTA */}
+      <div className="pb-20 text-center">
         <a
           href="https://wa.me/918308670846"
           target="_blank"
@@ -98,6 +99,19 @@ export default function VisitUsPage() {
           Pickup only · No home delivery
         </p>
       </div>
+
+      {/* PREBOOK SECTION (BOTTOM) */}
+      <div className="max-w-4xl mx-auto px-6 pb-24">
+        <h2 className="text-2xl font-semibold mb-2 text-[color:var(--ink)] text-center">
+          Prebook Your Order ☎️
+        </h2>
+        <p className="text-sm text-[color:var(--muted)] mb-8 text-center">
+          Save time by pre-booking and collect directly from the café
+        </p>
+
+        <PrebookForm />
+      </div>
+
     </section>
   );
 }

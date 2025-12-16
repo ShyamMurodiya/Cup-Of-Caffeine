@@ -14,12 +14,12 @@ export default function AboutComponent() {
         {/* HERO IMAGE */}
         <img
           src={heroImg}
-          className="w-full h-80 object-cover rounded-2xl mb-10"
+          className="w-full h-80 object-cover rounded-2xl mb-12"
           alt="Cup Of Caffeine café"
         />
 
-        {/* ABOUT TEXT */}
-        <div className="max-w-3xl">
+        {/* ABOUT CONTENT */}
+        <div className="max-w-3xl mb-20">
           <h1 className="text-3xl md:text-4xl font-semibold mb-4 text-[color:var(--ink)]">
             About Cup Of Caffeine ☕
           </h1>
@@ -42,7 +42,7 @@ export default function AboutComponent() {
           </div>
 
           {/* CTA */}
-          <div className="mb-16">
+          <div>
             <a
               href="/menu"
               className="inline-block px-6 py-3 rounded-xl bg-[color:var(--accent)] text-black font-semibold shadow hover:scale-105 transition"
@@ -52,29 +52,20 @@ export default function AboutComponent() {
           </div>
         </div>
 
-        {/* GALLERY SECTION */}
-        <div className="mb-20">
-          <h2 className="text-2xl font-semibold mb-6 text-[color:var(--ink)]">
-            Café Moments 📸
-          </h2>
-          <GalleryPreview />
-        </div>
+       
 
-        {/* REVIEWS SECTION */}
-        <div className="mb-20">
-          <h2 className="text-2xl font-semibold mb-6 text-[color:var(--ink)]">
+        {/* REVIEWS */}
+        <section className="mb-24">
+          <h2 className="text-2xl font-semibold mb-2 text-[color:var(--ink)]">
             What Our Customers Say ⭐
           </h2>
+          <p className="text-sm text-[color:var(--muted)] mb-6">
+            Real reviews from people who visit us
+          </p>
           <Reviews />
-        </div>
+        </section>
 
-        {/* PREBOOK SECTION */}
-        <div>
-          <h2 className="text-2xl font-semibold mb-6 text-[color:var(--ink)]">
-            Prebook Your Order ☎️
-          </h2>
-          <PrebookForm />
-        </div>
+       
 
       </div>
     </section>
